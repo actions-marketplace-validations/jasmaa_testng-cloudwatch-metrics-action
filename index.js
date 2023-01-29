@@ -60,19 +60,19 @@ function parseSuiteResult(suite) {
     ],
   };
   core.info(`Parsed suite result ${JSON.stringify(suiteResult)}`);
-  return suiteRes;
+  return suiteResult;
 }
 
-async function publishSuiteResult(cw, namespace, suiteRes) {
-  core.info(`Publishing test results for ${suiteRes.suiteName}...`);
+async function publishSuiteResult(cw, namespace, suiteResult) {
+  core.info(`Publishing test results for ${suiteResult.suiteName}...`);
   await cw.putMetricData({
-    MetricData: suiteRes.metrics.map(({ name, value }) => {
+    MetricData: suiteResult.metrics.map(({ name, value }) => {
       return {
         MetricName: name,
         Dimensions: [
           {
             Name: "TestSuite",
-            Value: suiteRes.suiteName,
+            Value: suiteResult.suiteName,
           }
         ],
         Value: value,
@@ -81,7 +81,7 @@ async function publishSuiteResult(cw, namespace, suiteRes) {
     }),
     Namespace: namespace,
   }).promise();
-  core.info(`Published test results for ${suiteRes.suiteName}`);
+  core.info(`Published test results for ${suiteResult.suiteName}`);
 }
 
 (async () => {
