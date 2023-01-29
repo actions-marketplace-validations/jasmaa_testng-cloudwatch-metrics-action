@@ -6,13 +6,13 @@ const xml2js = require('xml2js');
 const aws = require('aws-sdk');
 
 function parseSuiteResult(suite) {
-  core.info(`Parsing test results for ${suiteRes.suiteName}...`);
+  const suiteName = suite['$']['name'];
+  core.info(`Parsing test results for ${suiteName}...`);
   let nTotal = 0;
   let nPass = 0;
   let nFail = 0;
   let nSkip = 0;
   let nUnknown = 0;
-  const suiteName = suite['$']['name'];
   for (const test of suite['test']) {
     for (const classObj of test['class']) {
       for (const testMethod of classObj['test-method']) {
@@ -60,7 +60,7 @@ function parseSuiteResult(suite) {
     ],
   };
   core.info(`Parsed suite result ${JSON.stringify(suiteResult)}`);
-  return suiteResult
+  return suiteRes;
 }
 
 async function publishSuiteResult(cw, namespace, suiteRes) {
