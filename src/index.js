@@ -80,7 +80,7 @@ async function publishSuiteResult(cw, namespace, suiteResult) {
     }),
     Namespace: namespace,
   }).promise();
-  core.info(`Successfully published test results for "${suiteResult.suiteName}!"`);
+  core.info(`Successfully published test results for "${suiteResult.suiteName}"!`);
 }
 
 (async () => {
