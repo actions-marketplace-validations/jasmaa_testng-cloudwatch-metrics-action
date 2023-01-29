@@ -15,20 +15,23 @@ function parseSuiteResult(suite) {
   for (const test of suite['test']) {
     for (const classObj of test['class']) {
       for (const testMethod of classObj['test-method']) {
-        nTotal++;
-        switch (testMethod['$']['status']) {
-          case 'PASS':
-            nPass++;
-            break;
-          case 'FAIL':
-            nFail++;
-            break;
-          case 'SKIP':
-            nSkip++;
-            break;
-          default:
-            nUnknown++;
-            break;
+        // Ignore config test methods
+        if (!testMethod['$']['is-config']) {
+          nTotal++;
+          switch (testMethod['$']['status']) {
+            case 'PASS':
+              nPass++;
+              break;
+            case 'FAIL':
+              nFail++;
+              break;
+            case 'SKIP':
+              nSkip++;
+              break;
+            default:
+              nUnknown++;
+              break;
+          }
         }
       }
     }
@@ -86,8 +89,9 @@ async function publishSuiteResult(cw, namespace, suiteResult) {
 (async () => {
   const reportsPath = core.getInput('reports-path');
   const namespace = core.getInput('namespace');
+  const region = process.env.AWS_REGION;
 
-  aws.config.update({ region: process.env.AWS_REGION })
+  aws.config.update({ region })
   const cw = new aws.CloudWatch();
 
   core.info("Reading testng results...");
