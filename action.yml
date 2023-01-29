@@ -2,7 +2,7 @@ name: TestNG CloudWatch Metrics
 description: Publishes TestNG report to CloudWatch metrics
 
 inputs:
-  report-path:
+  reports-path:
     description: Path to TestNG reports output
     default: target/surefire-reports
   namespace:
