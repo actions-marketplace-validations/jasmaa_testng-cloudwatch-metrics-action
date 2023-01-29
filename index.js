@@ -6,6 +6,7 @@ const xml2js = require('xml2js');
 const aws = require('aws-sdk');
 
 function parseSuiteResult(suite) {
+  core.info(`Parsing test results for ${suiteRes.suiteName}...`);
   let nTotal = 0;
   let nPass = 0;
   let nFail = 0;
@@ -33,7 +34,7 @@ function parseSuiteResult(suite) {
       }
     }
   }
-  return {
+  const suiteResult = {
     suiteName,
     metrics: [
       {
@@ -57,11 +58,14 @@ function parseSuiteResult(suite) {
         value: nUnknown,
       },
     ],
-  }
+  };
+  core.info(`Parsed suite result ${JSON.stringify(suiteResult)}`);
+  return suiteResult
 }
 
 async function publishSuiteResult(cw, namespace, suiteRes) {
-  return cw.putMetricData({
+  core.info(`Publishing test results for ${suiteRes.suiteName}...`);
+  await cw.putMetricData({
     MetricData: suiteRes.metrics.map(({ name, value }) => {
       return {
         MetricName: name,
@@ -77,6 +81,7 @@ async function publishSuiteResult(cw, namespace, suiteRes) {
     }),
     Namespace: namespace,
   }).promise();
+  core.info(`Published test results for ${suiteRes.suiteName}`);
 }
 
 (async () => {
@@ -89,6 +94,7 @@ async function publishSuiteResult(cw, namespace, suiteRes) {
   aws.config.update({ region: process.env.AWS_REGION })
   const cw = new aws.CloudWatch();
 
+  core.info("Reading testng results...");
   let xmlRes;
   try {
     const xml = await fs.promises.readFile(path.join(reportsPath, 'testng-results.xml'));
@@ -97,9 +103,11 @@ async function publishSuiteResult(cw, namespace, suiteRes) {
     core.error(e);
   }
 
+  core.info("Parsing suite results...");
   const suites = xmlRes['testng-results']['suite'];
   const suiteResults = suites.map((suite) => parseSuiteResult(suite));
 
+  core.info("Publishing suite results...");
   try {
     await Promise.all(suiteResults.map((suiteResult) => publishSuiteResult(cw, namespace, suiteResult)));
   } catch (e) {
