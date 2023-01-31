@@ -1,0 +1,568 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Publish TestNG results test single suite for reports-path="__tests__/basic_noTests" 1`] = `
+{
+  "MetricData": [
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Total",
+      "Unit": "Count",
+      "Value": 0,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Passed",
+      "Unit": "Count",
+      "Value": 0,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Failed",
+      "Unit": "Count",
+      "Value": 0,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Skipped",
+      "Unit": "Count",
+      "Value": 0,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Unknown",
+      "Unit": "Count",
+      "Value": 0,
+    },
+  ],
+  "Namespace": "TestNG Canary",
+}
+`;
+
+exports[`Publish TestNG results test single suite for reports-path="__tests__/basic_oneFail" 1`] = `
+{
+  "MetricData": [
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Total",
+      "Unit": "Count",
+      "Value": 1,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Passed",
+      "Unit": "Count",
+      "Value": 0,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Failed",
+      "Unit": "Count",
+      "Value": 1,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Skipped",
+      "Unit": "Count",
+      "Value": 0,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Unknown",
+      "Unit": "Count",
+      "Value": 0,
+    },
+  ],
+  "Namespace": "TestNG Canary",
+}
+`;
+
+exports[`Publish TestNG results test single suite for reports-path="__tests__/basic_onePass" 1`] = `
+{
+  "MetricData": [
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Total",
+      "Unit": "Count",
+      "Value": 1,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Passed",
+      "Unit": "Count",
+      "Value": 1,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Failed",
+      "Unit": "Count",
+      "Value": 0,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Skipped",
+      "Unit": "Count",
+      "Value": 0,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Unknown",
+      "Unit": "Count",
+      "Value": 0,
+    },
+  ],
+  "Namespace": "TestNG Canary",
+}
+`;
+
+exports[`Publish TestNG results test single suite for reports-path="__tests__/basic_oneSkip" 1`] = `
+{
+  "MetricData": [
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Total",
+      "Unit": "Count",
+      "Value": 1,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Passed",
+      "Unit": "Count",
+      "Value": 0,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Failed",
+      "Unit": "Count",
+      "Value": 0,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Skipped",
+      "Unit": "Count",
+      "Value": 1,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Unknown",
+      "Unit": "Count",
+      "Value": 0,
+    },
+  ],
+  "Namespace": "TestNG Canary",
+}
+`;
+
+exports[`Publish TestNG results test single suite for reports-path="__tests__/basic_oneUnknown" 1`] = `
+{
+  "MetricData": [
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Total",
+      "Unit": "Count",
+      "Value": 1,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Passed",
+      "Unit": "Count",
+      "Value": 0,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Failed",
+      "Unit": "Count",
+      "Value": 0,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Skipped",
+      "Unit": "Count",
+      "Value": 0,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Unknown",
+      "Unit": "Count",
+      "Value": 1,
+    },
+  ],
+  "Namespace": "TestNG Canary",
+}
+`;
+
+exports[`Publish TestNG results test single suite for reports-path="__tests__/complex_multipleClasses" 1`] = `
+{
+  "MetricData": [
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Total",
+      "Unit": "Count",
+      "Value": 8,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Passed",
+      "Unit": "Count",
+      "Value": 5,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Failed",
+      "Unit": "Count",
+      "Value": 2,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Skipped",
+      "Unit": "Count",
+      "Value": 1,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Unknown",
+      "Unit": "Count",
+      "Value": 0,
+    },
+  ],
+  "Namespace": "TestNG Canary",
+}
+`;
+
+exports[`Publish TestNG results test single suite for reports-path="__tests__/complex_multipleMethods" 1`] = `
+{
+  "MetricData": [
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Total",
+      "Unit": "Count",
+      "Value": 4,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Passed",
+      "Unit": "Count",
+      "Value": 1,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Failed",
+      "Unit": "Count",
+      "Value": 1,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Skipped",
+      "Unit": "Count",
+      "Value": 1,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Unknown",
+      "Unit": "Count",
+      "Value": 1,
+    },
+  ],
+  "Namespace": "TestNG Canary",
+}
+`;
+
+exports[`Publish TestNG results test single suite for reports-path="__tests__/complex_multipleTests" 1`] = `
+{
+  "MetricData": [
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Total",
+      "Unit": "Count",
+      "Value": 2,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Passed",
+      "Unit": "Count",
+      "Value": 1,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Failed",
+      "Unit": "Count",
+      "Value": 1,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Skipped",
+      "Unit": "Count",
+      "Value": 0,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Unknown",
+      "Unit": "Count",
+      "Value": 0,
+    },
+  ],
+  "Namespace": "TestNG Canary",
+}
+`;
+
+exports[`Publish TestNG results test single suite for reports-path="__tests__/complex_real1" 1`] = `
+{
+  "MetricData": [
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Total",
+      "Unit": "Count",
+      "Value": 4,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Passed",
+      "Unit": "Count",
+      "Value": 2,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Failed",
+      "Unit": "Count",
+      "Value": 1,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Skipped",
+      "Unit": "Count",
+      "Value": 1,
+    },
+    {
+      "Dimensions": [
+        {
+          "Name": "TestSuite",
+          "Value": "Surefire suite",
+        },
+      ],
+      "MetricName": "Unknown",
+      "Unit": "Count",
+      "Value": 0,
+    },
+  ],
+  "Namespace": "TestNG Canary",
+}
+`;

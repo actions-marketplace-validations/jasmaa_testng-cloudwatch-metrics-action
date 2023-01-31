@@ -12,9 +12,9 @@ function parseSuiteResult(suite) {
   let nFail = 0;
   let nSkip = 0;
   let nUnknown = 0;
-  for (const test of suite['test']) {
-    for (const classObj of test['class']) {
-      for (const testMethod of classObj['test-method']) {
+  for (const test of suite['test'] || []) {
+    for (const classObj of test['class'] || []) {
+      for (const testMethod of classObj['test-method'] || []) {
         // Ignore config test methods
         if (!testMethod['$']['is-config']) {
           nTotal++;
@@ -86,7 +86,7 @@ async function publishSuiteResult(cw, namespace, suiteResult) {
   core.info(`Successfully published test results for "${suiteResult.suiteName}"!`);
 }
 
-(async () => {
+async function run() {
   const reportsPath = core.getInput('reports-path');
   const namespace = core.getInput('namespace');
   const region = process.env.AWS_REGION;
@@ -101,6 +101,7 @@ async function publishSuiteResult(cw, namespace, suiteResult) {
     xmlRes = await xml2js.parseStringPromise(xml);
   } catch (e) {
     core.error(e);
+    throw e;
   }
 
   core.info("Parsing suite results...");
@@ -112,5 +113,12 @@ async function publishSuiteResult(cw, namespace, suiteResult) {
     await Promise.all(suiteResults.map((suiteResult) => publishSuiteResult(cw, namespace, suiteResult)));
   } catch (e) {
     core.error(e);
+    throw e;
   }
-})();
+}
+
+exports.run = run;
+
+if (require.main === module) {
+  run();
+}

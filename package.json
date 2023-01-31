@@ -6,7 +6,7 @@
   "scripts": {
     "package": "ncc build src/index.js -o dist",
     "lint": "eslint src/**.js",
-    "test": "npm run lint"
+    "test": "npm run lint && jest"
   },
   "author": "",
   "license": "MIT",
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@vercel/ncc": "^0.36.1",
-    "eslint": "^8.33.0"
+    "eslint": "^8.33.0",
+    "jest": "^29.4.1"
   }
 }
