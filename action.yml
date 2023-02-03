@@ -1,5 +1,8 @@
 name: TestNG CloudWatch Metrics
 description: Publishes TestNG report to CloudWatch metrics
+branding:
+  icon: 'activity'
+  color: 'yellow'
 
 inputs:
   reports-path:
